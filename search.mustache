@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Search Results</title>
+<style type="text/css">
+body { font-family: sans-serif; }
+.subject, .newspaper { font-size: 85%; }
+
+table, th, td { font-size: 75%; }
+td { border-bottom: solid thin black; }
+caption { padding: 3px; padding-top: 7px; background-color: #ffffff; height: 40px;  }
+.terms { padding: 3px; background-color: #ffffff; color: #9abbe3; }
+.term { color: #000000; }
+</style>
+</head>
+<body>
+<h1>Search Results</h1>
+
+<DIV STYLE="width: 870">
+<TABLE cellspacing=0 cellpadding=2 id=header>
+
+{{#maxout}}
+
+	<p>Please refine your search.</p>
+
+	<DIV STYLE="width: 870">
+	<TABLE cellspacing=0 cellpadding=2 id=header>
+	<caption><span class="terms">Results:
+	<span class="term">{{count}}</span> Term:
+	<span class="term">{{term}}</span> Start:
+	<span class="term">{{startdate}}</span> End:
+	<span class="term">{{enddate}}</span> Sort: <span
+	class="term">{{datesort}}</span></span><br/></span></caption>
+
+
+	<COL WIDTH=200><COL WIDTH=200><COL WIDTH=100><COL WIDTH=40><COL WIDTH=30><COL
+	WIDTH=100><COL WIDTH=200>
+
+	<tr>
+	<th width=200 bgcolor="lightgrey">Headline</th>
+	<th width=200 bgcolor="lightgrey">Newspaper</th>
+	<th width=100 bgcolor="lightgrey">Date</th>
+	<th width=40 bgcolor="lightgrey">Page</th>
+	<th width=30 bgcolor="lightgrey">Photo</th>
+	<th width=100 bgcolor="lightgrey">Column</th>
+	<th width=200 bgcolor="lightgrey">Subject</th>
+	<th width=30 bgcolor="lightgrey">&nbsp;</th>
+	</tr>
+	</TABLE>    
+	</DIV>
+{{/maxout}}
+
+{{^maxout}}
+
+	<DIV STYLE="width: 870">
+	<TABLE cellspacing=0 cellpadding=2 id=header>
+	<caption><span class="terms">Results: <span
+	class="term">{{count}}</span> Term: <span
+	class="term">{{term}}</span> Start: <span
+	class="term">{{startdate}}</span> End: <span
+	class="term">{{enddate}}</span> Sort: <span
+	class="term">{{datesort}}</span></span></caption>
+
+	<COL WIDTH=200><COL WIDTH=200><COL WIDTH=100><COL WIDTH=40><COL WIDTH=30><COL
+	WIDTH=100><COL WIDTH=200>
+
+	<tr>
+	<th width=200 bgcolor="lightgrey">Headline</th>
+	<th width=200 bgcolor="lightgrey">Newspaper</th>
+	<th width=100 bgcolor="lightgrey">Date</th>
+	<th width=40 bgcolor="lightgrey">Page</th>
+	<th width=30 bgcolor="lightgrey">Photo</th>
+	<th width=100 bgcolor="lightgrey">Column</th>
+	<th width=200 bgcolor="lightgrey">Subject</th>
+	<th width=30 bgcolor="lightgrey">&nbsp;</th>
+	</tr>
+	</TABLE>    
+	</DIV>
+
+	<DIV STYLE="overflow: auto; width: 870px; height: 300;
+	border-left: 1px gray solid; border-bottom: 1px gray solid;
+	padding:0px; margin: 0px">
+
+	<TABLE cellspacing=0 cellpadding=2>
+
+	<COL WIDTH=200><COL WIDTH=200><COL WIDTH=100><COL WIDTH=40><COL WIDTH=30><COL WIDTH=100><COL WIDTH=200>
+
+	{{#results}}
+		<tr valign="top">
+		<td width=200>{{headline}}&nbsp;</td>
+		<td width=200><span class="newspaper">{{newspaper}}&nbsp;</span></td>
+		<td width=100>{{date}}</td>
+		<td width=40>p.{{page}}</td>
+		<td width=30>{{{photo}}}&nbsp;</td>
+		<td width=100>{{columntitle}}&nbsp;</td>
+		<td width=200><span class="subject">{{subject}}</span></td>
+		</tr>
+	{{/results}}
+
+	</table>
+	</div>
+	</div>
+{{/maxout}}
+
+</body>
+</html>

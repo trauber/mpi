@@ -1,0 +1,70 @@
+!!!
+%html
+  %head
+    %title Search the Database
+    %script{:language => "javascript"}
+      function togglehidden() {
+      if (document.getElementById('hidden').style.display == 'none') {
+      document.getElementById('hidden').style.display = '';
+      document.forms[0].togglebutton.value = "Hide options.";
+
+      } else {
+      document.getElementById('hidden').style.display = 'none';
+      document.forms[0].togglebutton.value = "Show options.";
+
+      }
+      }
+    :css
+      /**/
+        body { font-family: sans-serif; }
+        form {margin-left:auto; margin-right:auto; width: 85%;}
+        #hidden { font-size: 65%; }
+      /**/
+  %body
+    %h1
+      Search the Index to the News Chronicle Suburban
+    %form{:action => "search.php", :method => "post"}
+      %table{:cellspacing => "60px"}
+        %tr{:valign => "top"}
+          %td
+            %p{:align => "left"}
+              Search string:
+              %br/
+              %br/
+              %input{:name => "term", :size => "40", :type => "text"}/
+              %br/
+              %br/
+              %input{:name => "submit", :type => "submit", :value => "Submit"}/
+              %input{:type => "reset", :value => "Reset!"}/
+              %input{:name => "togglebutton", :onclick => "togglehidden();", :type => "button", :value => "Show options."}/
+
+          %td
+            %dl#hidden{:style => "display:none;"}
+              %dt Date sort:
+              %dd
+                %br/
+                %input{:checked => "checked", :name => "dsort", :type => "radio", :value => "desc"}/
+                descending
+                %br/
+                %br/
+                %input{:name => "dsort", :type => "radio", :value => "asc"}/
+                ascending
+                %br/
+                %br/
+              %dt Date range (yyyy-mm-dd):
+              %dd
+                %br/
+                Start date:
+                %input{:name => "startdate", :size => "10", :type => "text", :value => "1976-01-01"}/
+                %br/
+                %br/
+                End date:
+                %input{:name => "enddate", :size => "10", :type => "text", :value => "1976-12-31"}/
+                %br/
+                %br/
+              %dt Photo:
+              %dd
+                %br/
+                %input{:name => "photo", :type => "checkbox", :value => "Yes"}/
+                has photo
+
