@@ -55,13 +55,31 @@
               %dd
                 %br/
                 Start date:
-                %input{:name => "startdate", :size => "10", :type => "text", :value => "1976-01-01"}/
+                %input{:name => "startdate", :size => "10", :type => "text", :value => "1923-01-01"}/
                 %br/
                 %br/
                 End date:
-                %input{:name => "enddate", :size => "10", :type => "text", :value => "1976-12-31"}/
+                %input{:name => "enddate", :size => "10", :type => "text", :value => "2006-12-31"}/
                 %br/
                 %br/
+              %dt Newspaper:
+              %dd
+                %br/
+                %input{:name => "paper[1]", :type => "checkbox", :value => "Moorestown News", :checked => "checked"}/
+                Moorestown News
+              %dd
+                %br/
+                %input{:name => "paper[2]", :type => "checkbox", :value => "News Chronicle", :checked => "checked"}/
+                News Chronicle
+              %dd
+                %br/
+                %input{:name => "paper[3]", :type => "checkbox", :value => "News Weekly", :checked => "checked"}/
+                News Weekly
+
+              %dd
+                %br/
+                %input{:name => "paper[4]", :type => "checkbox", :value => "Moorestown Sun", :checked => "checked"}/
+                Moorestown Sun
               %dt Photo:
               %dd
                 %br/
