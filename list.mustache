@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Search Results</title>
+<style type="text/css">
+body { font-family: sans-serif; }
+dt { margin-top: 1em; }
+</style>
+</head>
+<body>
+<h1>Search Results</h1>
+	<ul>
+	<li>Results: {{count}}</li>
+	<li>Term: {{term}}</li> 
+	<li>Start: {{startdate}}</li>
+	<li>End: {{enddate}}</li>
+	<li>Sort: {{datesort}}</li>
+	<li>Papers: {{papers}}</li>
+	<dl>
+	{{#results}}
+		<dt>{{headline}}&nbsp;/&nbsp;{{author}}
+		<dd>{{newspaper}}.&nbsp;{{date}}.&nbsp;p&nbsp;{{page}}
+		<br/>{{subject}}
+		<br/>{{{photo}}} {{columntitle}}
+		</dd>
+	{{/results}}
+	</dl>
+
+</body>
+</html>
