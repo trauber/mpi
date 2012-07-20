@@ -38,15 +38,18 @@ function datecheck($input) {
 # For exceptions use a different one.
 # And make it something simple, with a return link to the search form
 # and a one scalar view.
-$template = file_get_contents('search.mustache');
+$template = file_get_contents('list.mustache');
 
-$con = mysql_connect ("127.0.0.1", "root","7he2@7@sp12")  or die (mysql_error());
+$con = mysql_connect ("<server>", "<user>","<password>")  or die (mysql_error());
 
 $datesort = $_POST['dsort'];
 $term = $_POST['term'];  
 $startdate = $_POST['startdate'];
 $enddate = $_POST['enddate'];
 $paper = $_POST['paper'];
+
+$papers = join(", ", $paper);
+
 
 datecheck($startdate);
 datecheck($enddate);
@@ -66,7 +69,7 @@ $view['datesort'] = $datesort;
 $view['term'] = $term;
 $view['startdate'] = $startdate;
 $view['enddate'] = $enddate;
-
+$view['papers'] = $papers;
 
 
 $results = array();
