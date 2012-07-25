@@ -100,7 +100,7 @@ while ($row = mysql_fetch_array($sql)){
 		}
 	}
 
-	if ($row['photo'] == 'yes') {
+	if ($row['photo'] == 'yes' || $row['photo'] == 'Yes') {
 		$row['photo'] = $phototext;
 	}
 

@@ -1,105 +1,96 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
-    <title>Search the Database</title>
-    <script language='javascript'>
-      function togglehidden() {
-      if (document.getElementById('hidden').style.display == 'none') {
-      document.getElementById('hidden').style.display = '';
-      document.forms[0].togglebutton.value = "Hide options.";
-      } else {
-      document.getElementById('hidden').style.display = 'none';
-      document.forms[0].togglebutton.value = "Show options.";
-      }
-      }
-    </script>
+    <title>Search the Moorestown Newspaper Indexes</title>
     <style type='text/css'>
       /*<![CDATA[*/
         /**/
           body { font-family: sans-serif; }
-          form {margin-left:auto; margin-right:auto; width: 85%;}
-          #hidden { font-size: 65%; }
+          form { margin-left: auto; margin-right: auto; width: 85%; }
+          .formsubhead { padding-top: 1em; }
+          .left { float: left; }
+          .right { float: right; margin-left: 30px; }
+          #options{ font-size: 65%;}
         /**/
       /*]]>*/
     </style>
   </head>
   <body>
     <h1>
-      Search the Index to the News Chronicle Suburban
+      Search the Moorestown Newspaper Indexes
     </h1>
     <form action='search.php' method='post'>
-      <table cellspacing='60px'>
-        <tr valign='top'>
-          <td>
-            <p align='left'>
-              Search string:
+      <div class='left'>
+        <p class='formsubhead'>Search string:</p>
+        <input name='term' size='30' type='text' />
+        <br />
+        <br />
+        <input name='submit' type='submit' value='Submit' />
+        <input type='reset' value='Reset!' />
+      </div>
+      <div class='right'>
+        <p class='formsubhead'>Options:</p>
+        <div class='left'>
+          <dl id='options'>
+            <dt title='some stuff'>Date sort:</dt>
+            <dd>
+              <br />
+              <input checked='checked' name='dsort' type='radio' value='desc' />
+              descending
               <br />
               <br />
-              <input name='term' size='40' type='text' />
+              <input name='dsort' type='radio' value='asc' />
+              ascending
               <br />
               <br />
-              <input name='submit' type='submit' value='Submit' />
-              <input type='reset' value='Reset!' />
-              <input name='togglebutton' onclick='togglehidden();' type='button' value='Show options.' />
-            </p>
-          </td>
-          <td>
-            <dl id='hidden' style='display:none;'>
-              <dt>Date sort:</dt>
-              <dd>
-                <br />
-                <input checked='checked' name='dsort' type='radio' value='desc' />
-                descending
-                <br />
-                <br />
-                <input name='dsort' type='radio' value='asc' />
-                ascending
-                <br />
-                <br />
-              </dd>
-              <dt>Date range (yyyy-mm-dd):</dt>
-              <dd>
-                <br />
-                Start date:
-                <input name='startdate' size='10' type='text' value='1923-01-01' />
-                <br />
-                <br />
-                End date:
-                <input name='enddate' size='10' type='text' value='2006-12-31' />
-                <br />
-                <br />
-              </dd>
-              <dt>Newspaper:</dt>
-              <dd>
-                <br />
-                <input checked='checked' name='paper[1]' type='checkbox' value='Moorestown News' />
-                Moorestown News
-              </dd>
-              <dd>
-                <br />
-                <input checked='checked' name='paper[2]' type='checkbox' value='News Chronicle' />
-                News Chronicle
-              </dd>
-              <dd>
-                <br />
-                <input checked='checked' name='paper[3]' type='checkbox' value='News Weekly' />
-                News Weekly
-              </dd>
-              <dd>
-                <br />
-                <input checked='checked' name='paper[4]' type='checkbox' value='Moorestown Sun' />
-                Moorestown Sun
-              </dd>
-              <dt>Photo:</dt>
-              <dd>
-                <br />
-                <input name='photo' type='checkbox' value='Yes' />
-                has photo
-              </dd>
-            </dl>
-          </td>
-        </tr>
-      </table>
+            </dd>
+            <dt>Date range (yyyy-mm-dd):</dt>
+            <dd>
+              <br />
+              Start date:
+              <input name='startdate' size='10' type='text' value='1923-01-01' />
+              <br />
+              <br />
+              End date:
+              <input name='enddate' size='10' type='text' value='2006-12-31' />
+              <br />
+              <br />
+            </dd>
+          </dl>
+          <dl></dl>
+        </div>
+        <div class='right'>
+          <dl id='options'>
+            <dt>Newspaper:</dt>
+            <dd>
+              <br />
+              <input checked='checked' name='paper[1]' type='checkbox' value='Moorestown News' />
+              Moorestown News
+            </dd>
+            <dd>
+              <br />
+              <input checked='checked' name='paper[2]' type='checkbox' value='News Chronicle' />
+              News Chronicle
+            </dd>
+            <dd>
+              <br />
+              <input checked='checked' name='paper[3]' type='checkbox' value='News Weekly' />
+              News Weekly
+            </dd>
+            <dd>
+              <br />
+              <input checked='checked' name='paper[4]' type='checkbox' value='Moorestown Sun' />
+              Moorestown Sun
+            </dd>
+            <dt>Photo:</dt>
+            <dd>
+              <br />
+              <input name='photo' type='checkbox' value='Yes' />
+              has photo
+            </dd>
+          </dl>
+        </div>
+      </div>
     </form>
   </body>
 </html>
